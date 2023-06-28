@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sistema de Registro de Ponto</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+      <center>
+         <h3>Registro de Ponto</h3>
+      </center><br>
+
+      <center>
+         <div class="row">
+            <div class="col-sm-7">
+               <form id="pontoForm">
+                  <div class="form-group">
+                     <!--  <label for="tipo">Tipo:</label> -->
+                     <select class="form-control" id="tipo" required>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida_almoco">Saída Almoço</option>
+                        <option value="volta_almoco">Volta Almoço</option>
+                        <option value="saida">Saída</option>
+                     </select>
+                  </div>
+            </div>
+            <div class="col-sm">
+               <div class="form-group">
+                  <!-- <label for="data">Data:</label> -->
+                  <input type="date" class="form-control" id="data" required>
+               </div>
+            </div>
+            <div class="col-sm">
+               <div class="form-group">
+                  <!-- <label for="hora">Hora:</label> -->
+                  <input type="time" class="form-control" id="hora" required>
+               </div>
+            </div>
+            <div class="col-sm">
+               <div class="d-grid gap-2"><button type="submit" class="btn btn-primary">Registrar</button></div>
+            </div>
+            </form>
+         </div>
+      </center>
+
+      <br>
+
+      <div class="d-flex flex-row">
+         <div class="p-2">
+            <p class="d-inline-flex">Busca:</p>&nbsp;
+            <div class="d-inline-flex form-group">
+               <input type="date" class="form-control" id="filtroData">
+            </div>
+         </div>
+      </div>
+
+      <table class="table">
+         <thead>
+            <tr>
+               <th>Tipo</th>
+               <th>Data</th>
+               <th>Hora</th>
+               <th>Ação</th>
+            </tr>
+         </thead>
+         <tbody id="pontosTableBody">
+         </tbody>
+      </table>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <script src="script.js"></script>
+</body>
+
+</html>
